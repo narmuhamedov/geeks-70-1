@@ -20,12 +20,15 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from blog.views import hello_world_view, about_me_view
+from blog.views import hello_world_view, about_me_view, blog_mem_view, blog_mem_detail_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('hello_world/', hello_world_view),
     path('about_me/', about_me_view),
+    path('blog_mem/', blog_mem_view),
+    path('blog_mem/<int:id>/', blog_mem_detail_view),
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -1,0 +1,21 @@
+<h1>{{ blog_id.title }}</h1>
+<img src="{{ blog_id.image.url }}" alt="" width="340" height="250">
+
+
+{% if blog_id.descripiton %}
+    <p>{{ blog_id.descripiton }}</p>
+{% else %}
+    <p>Описание еще не добавлено.....</p>
+{% endif %}
+
+
+<p>Жанр:{{ blog_id.genre }}</p>
+
+{% if blog_id.video_url %}
+    <a href="{{ blog_id.video_url }}">{{ blog_id.video_url }}</a>
+{% else %}
+    <p>Видео еще не добавлено....</p>
+
+{% endif %}
+
+<p>{{ blog_id.created_at }}</p>
