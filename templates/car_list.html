@@ -1,0 +1,51 @@
+<ul>
+    {% for i in car %}
+
+    <li>
+        <h2>{{ i.title }}</h2>
+        <p>{{ i.vincode }}</p>
+        <p>{{ i.person }}</p>
+        <p>{{ i.created_at }}</p>
+    </li>
+
+    <li>
+        {% for cat in i.categories.all %}
+            {% if cat.name %}
+                <p>{{ cat.name }}</p>
+            {% endif %}
+        
+            {% empty %}
+            <p>Категория еще не указана!</p>
+        {% endfor %}
+    </li>
+
+
+ <li>
+    {% if i.statenumbercar %}
+        <p>{{ i.statenumbercar.number_car }}</p>
+    {% else %}
+        <p>Номер не указан!</p>
+    {% endif %}
+</li>
+
+    
+        {% for rev in i.reviews.all %}
+        
+        {% if rev.description %}
+        <p>
+            {{ rev.description}}
+        </p>
+        {% else %}
+        <p>Описание не добавлено</p>
+        {% endif %}
+
+        <p>{{ rev.mark }}</p>
+        <p>{{ rev.created_at }}</p>
+
+
+        {% endfor %}
+   
+
+
+    {% endfor %}
+</ul>

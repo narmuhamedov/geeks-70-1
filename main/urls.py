@@ -21,6 +21,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from blog.views import hello_world_view, about_me_view, blog_mem_view, blog_mem_detail_view
+from cars.views import car_list_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,6 +29,7 @@ urlpatterns = [
     path('about_me/', about_me_view),
     path('blog_mem/', blog_mem_view),
     path('blog_mem/<int:id>/', blog_mem_detail_view),
+    path('cars_list/', car_list_view),
 
 ]
 

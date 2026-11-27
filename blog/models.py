@@ -5,6 +5,7 @@ class Blog(models.Model):
                              verbose_name='укажите название блога')   
      
     image = models.ImageField(upload_to='blog/', verbose_name='загрузите фото')
+    image_2 = models.ImageField(upload_to='blog/', verbose_name='загрузите фото2', null=True)
     
     descripiton = models.TextField(verbose_name='укажите описание блога',
                                     blank=True)
